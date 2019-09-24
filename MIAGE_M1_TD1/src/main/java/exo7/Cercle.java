@@ -44,9 +44,17 @@ public class Cercle {
 		}
 		return false;
 	}
-	public boolean contains(Cercle circle,Point a) {
-			return (distance(a,circle.centre)<=circle.rayon);
+	public static boolean contains(Point a,Cercle ...circles) {
+			   for(Cercle  c : circles){
+			      if (c.contains(a))
+			    	  return true;
+			   }
+			return false;
 	}
+	public boolean contains(Point a) {
+		     return (distance(this.centre,a)<this.rayon);	 
+}
+	
 	public static double distance(Point a,Point b) {
 		return Math.sqrt(Math.pow(a.getX()-b.getX(),2)
 						+Math.pow(a.getY()-b.getY(),2)
