@@ -30,6 +30,11 @@ public class Point {
 		return (this.x == dot.x && this.y ==dot.y);
 		
 	}
+	
+	/**
+	 * GETTER AND SETTER
+	 */
+	
 	public int getX() {
 		return x;
 	}
@@ -46,15 +51,33 @@ public class Point {
 		this.y = y;
 	}
 
+	/**
+	 * 
+	 * END GETTER AND SETTER SECTION
+	 * 
+	 */
+	
+	/**
+	 * 
+	 * @param dot
+	 * @return
+	 */
+	
 	public boolean isSamePoint(Point dot) {
 		return (this.x == dot.x && this.y ==dot.y); 
 	}
+	/**
+	 * Translating point
+	 * @param Coods :dx , dy
+	 */
 	
 	public void translate(int dx, int dy) {
 		this.x +=dx;
 		this.y +=dy;
 	}
-	
+	/**
+	 * TO STRING FUNCTION
+	 */
 	public String toString() {
 		StringBuilder tempSB= new StringBuilder("");
 		return (tempSB.append("Point Numero : ")
@@ -65,10 +88,14 @@ public class Point {
 				      .append(this.y)
 				      .toString());
 	}
-	
-	public static double distance(Point a,Point b) {
-		return Math.sqrt(Math.pow(a.getX()-b.getX(),2)
-						+Math.pow(a.getY()-b.getY(),2)
+	/**
+	 * 
+	 * @param firstPoint ,second point 
+	 * @return distance betwen two dots
+	 */
+	public static double distance(Point firstPoint,Point secondPoint) {
+		return Math.sqrt(Math.pow(firstPoint.getX()-secondPoint.getX(),2)
+						+Math.pow(firstPoint.getY()-secondPoint.getY(),2)
 						);
 	}
 }
